@@ -1,0 +1,27 @@
+{
+    "org": "$HZN_ORG_ID",
+    "label": "$SERVICE_NAME for $ARCH",
+    "description": "Debugging utility for achatina",
+    "public": true,
+    "documentation": "https://github.com/TheMosquito/achatina/blob/master/shared/monitor/Makefile",
+    "url": "$SERVICE_NAME",
+    "version": "$SERVICE_VERSION",
+    "arch": "$ARCH",
+    "sharable": "multiple",
+    "requiredServices": [],
+    "userInput": [],
+    "deployment": {
+        "services": {
+            "monitor": {
+                "image": "${DOCKER_IMAGE_BASE}_$ARCH:$SERVICE_VERSION",
+                "ports": [
+                    {
+                        "HostPort": "5200:5200/tcp",
+                        "HostIP": "0.0.0.0"
+                    }
+                ],
+                "privileged": false
+            }
+        }
+    }
+}
