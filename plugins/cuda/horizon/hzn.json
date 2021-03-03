@@ -1,0 +1,8 @@
+{
+    "HZN_ORG_ID": "$HZN_ORG_ID",
+    "MetadataVars": {
+        "DOCKER_IMAGE_BASE": "openhorizon/cuda",
+        "SERVICE_NAME": "cuda",
+        "SERVICE_VERSION": "1.1.0"
+    }
+}

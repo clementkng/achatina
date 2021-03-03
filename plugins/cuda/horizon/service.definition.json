@@ -1,0 +1,27 @@
+{
+    "org": "$HZN_ORG_ID",
+    "label": "$SERVICE_NAME for $ARCH",
+    "description": "A yolo plugin using CUDA",
+    "public": true,
+    "documentation": "https://github.com/TheMosquito/achatina/blob/master/plugins/cuda/Makefile",
+    "url": "$SERVICE_NAME",
+    "version": "$SERVICE_VERSION",
+    "arch": "$ARCH",
+    "sharable": "multiple",
+    "requiredServices": [],
+    "userInput": [],
+    "deployment": {
+        "services": {
+            "cuda": {
+                "image": "${DOCKER_IMAGE_BASE}_$ARCH:$SERVICE_VERSION",
+                "ports": [
+                    {
+                        "HostPort": "5252:80/tcp",
+                        "HostIP": "127.0.0.1"
+                    }
+                ],
+                "privileged": false
+            }
+        }
+    }
+}
