@@ -1,0 +1,29 @@
+{
+    "org": "$HZN_ORG_ID",
+    "label": "$SERVICE_NAME for $ARCH",
+    "description": "A yolo plugin using openvino",
+    "public": true,
+    "documentation": "https://github.com/TheMosquito/achatina/blob/master/plugins/openvino/Makefile",
+    "url": "$SERVICE_NAME",
+    "version": "$SERVICE_VERSION",
+    "arch": "$ARCH",
+    "sharable": "multiple",
+    "requiredServices": [],
+    "userInput": [
+        {
+            "name": "OPENVINO_PLUGIN",
+            "label": "The openvino plugin",
+            "type": "string",
+            "defaultValue": "MYRIAD"
+        }
+    ],
+    "deployment": {
+        "services": {
+            "openvino": {
+                "image": "${DOCKER_IMAGE_BASE}_$ARCH:$SERVICE_VERSION",
+                "privileged": true,
+                "devices": ["/dev:/dev"]
+            }
+        }
+    }
+}
