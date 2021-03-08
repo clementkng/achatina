@@ -18,7 +18,7 @@
 # Optionally configure an INPUT_URL in your environment. You have 3 choices:
 #   1. Don't set it and the "restcam" service or a static image will be used
 #   2. Provide a valid HTTP image URL. E.g.:
-#          https://commons.wikimedia.org/wiki/File:Example.jpg
+#          https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg
 #   3. Provide a valid RTSP stream URL. E.g.:
 #           rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov
 #
