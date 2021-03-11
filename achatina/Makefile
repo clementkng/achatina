@@ -21,7 +21,7 @@ SERVICE_VERSION:="2.0.0"
 # "achatina". These configurations support the shared mqtt broker service
 # and the shared "monitor" service.
 # To send to a different MQTT broker or topic, set these variables:
-#   MQTT_BROKER_URL, MQTT_BROKER_PORT, MQTT_PUB_TOPIC
+#   MQTT_BROKER_ADDRESS, MQTT_BROKER_PORT, MQTT_PUB_TOPIC
 
 # Optionally configure for Kafka publication. By defaltt it will not publish
 # to any Kafka broker.
@@ -58,7 +58,7 @@ run: check-dockerhubid check-input-url
            -e ACHATINA_PLUGIN=$(or ${ACHATINA_PLUGIN},cpu-only) \
            -e HOST_IP="${HOST_IP}" \
            -e NODE="${NODE}" \
-           -e MQTT_BROKER_URL="${MQTT_BROKER_URL}" \
+           -e MQTT_BROKER_ADDRESS="${MQTT_BROKER_ADDRESS}" \
            -e MQTT_BROKER_PORT="${MQTT_BROKER_PORT}" \
            -e MQTT_PUB_TOPIC="${MQTT_PUB_TOPIC}" \
            -e KAFKA_BROKER_URLS="${KAFKA_BROKER_URLS}" \
@@ -76,7 +76,7 @@ dev: check-dockerhubid check-input-url
            -e ACHATINA_PLUGIN=$(or ${ACHATINA_PLUGIN},cpu-only) \
            -e HOST_IP="${HOST_IP}" \
            -e NODE="${NODE}" \
-           -e MQTT_BROKER_URL="${MQTT_BROKER_URL}" \
+           -e MQTT_BROKER_ADDRESS="${MQTT_BROKER_ADDRESS}" \
            -e MQTT_BROKER_PORT="${MQTT_BROKER_PORT}" \
            -e MQTT_PUB_TOPIC="${MQTT_PUB_TOPIC}" \
            -e KAFKA_BROKER_URLS="${KAFKA_BROKER_URLS}" \
